@@ -1,5 +1,5 @@
 import React from 'react'
-import { Sheet, SheetContent, SheetTrigger, SHeetTrigger } from './ui/sheet'
+import { Sheet, SheetContent, SheetTrigger } from './ui/sheet'
 import { AlignJustify } from 'lucide-react'
 import Nav from './Nav'
 import Logo from './Logo'
