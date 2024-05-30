@@ -19,6 +19,10 @@ const infoData = [
         text: 'rizwaanans786@gmail.com',
     },
     {
+        icon: <GraduationCap size={20}/>,
+        text: 'Master on Computer Science',
+    },
+    {
         icon: <Calendar size={20}/>,
         text: 'Born on 10 Mar, 1998',
     },
@@ -122,19 +126,38 @@ const About = () => {
                 <div className='hidden xl:flex flex-1 relative'>
                     <DevImg containerStyles={`bg-about_shape_light dark:bg-about_shape_dark.svg w-[505px] h-[505px] bg-no-repeat relative`} imgSrc='/about/developer.png' />
                 </div>
-                {/* Tabs */}
+                {/* Tabs */} 
                 <div className='flex-1 '>
                     <Tabs defaultValue='personal'>
-                        <TabsList>
-                            <TabsTrigger value='personal'>Personal Info</TabsTrigger>
-                            <TabsTrigger value="qualifications">Qualifications</TabsTrigger>
-                            <TabsTrigger value="skills">Skils</TabsTrigger>
+                        <TabsList className='w-full grid xl:grid-cols-3 xl:max-w-[520px] xl:border dark:border-none'>
+                            <TabsTrigger className='w-[162px] xl:w-auto' value='personal'>Personal Info</TabsTrigger>
+                            <TabsTrigger className='w-[162px] xl:w-auto' value="qualifications">Qualifications</TabsTrigger>
+                            <TabsTrigger className='w-[162px] xl:w-auto' value="skills">Skils</TabsTrigger>
                         </TabsList>
                         {/* Tabs Content */}
                         <div className='text-lg mt-12 xl:mt-8'>
                             <TabsContent value="personal">
-                                Personal Info
+                                <div className='text-center xl:text-left'>
+                                    <h3 className='h3 mb-4'>Unmatched Service Quality for Over 10 Years</h3>
+                                    <p className='subtitle max-w-xl mx-auto xl:mx-0'>I specialize in crafting intuitive websites with cutting-edge technology, delivering dynamic and engaging user experiences.</p>
+                                    {/* icons */}
+                                    <div className='grid xl:grid-cols-2 gap-4 mb-12'>
+                                        {infoData.map((item, index) => {
+                                            return <div className='flex items-center gap-x-4 mx-auto xl:mx-0' key={index}>
+                                                <div className='text-primary'>{item.icon}</div>
+                                                <div>{item.text}</div>
+                                            </div>
+                                        })}
+                                    </div>
+                                    {/* Languages */}
+                                    <div className='flex flex-col gap-y-2'>
+                                        <div className='text-primary'>Language Skill</div>
+                                        <div className='border-b border-border'></div>
+                                        <div>English, French, Spanish, Italian</div>
+                                    </div>
+                                </div>
                             </TabsContent>
+                            {/* Qualifications */}
                             <TabsContent value="qualifications">
                                 qualifications Info
                             </TabsContent>
