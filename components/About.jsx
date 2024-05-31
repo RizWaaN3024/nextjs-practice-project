@@ -1,9 +1,10 @@
-
+"use client"
 import React from 'react'
 import DevImg from './DevImg'
 import Image from 'next/image'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs'
-import { User2, MailIcon, HomeIcon, PhoneCall, GraduationCap, Calendar, BriefCase } from 'lucide-react'
+import { User2, MailIcon, HomeIcon, PhoneCall, GraduationCap, Calendar } from 'lucide-react'
+import { Briefcase } from 'lucide-react'
 
 const infoData = [
     {
@@ -58,18 +59,18 @@ const qualificationData = [
         title: 'experience',
         data: [
             {
-                university: "ABS Inc",
-                qualification: 'Software Engineer',
+                company: "ABS Inc",
+                role: 'Software Engineer',
                 years: '2018 - 2020'
             },
             {
-                university: "XYZ Corporation",
-                qualification: 'Senior Developer',
+                company: "XYZ Corporation",
+                role: 'Senior Developer',
                 years: '2020 - 2022'
             },
             {
-                university: "Tech Innovators",
-                qualification: 'Lead Developer',
+                company: "Tech Innovators",
+                role: 'Lead Developer',
                 years: '2020 - Present'
             },
             
@@ -159,8 +160,69 @@ const About = () => {
                             </TabsContent>
                             {/* Qualifications */}
                             <TabsContent value="qualifications">
-                                qualifications Info
+                                    <div>
+                                        <h3 className='h3 mb-8 text-center xl:text-left'>My Awesome Journey</h3>
+                                        {/* Experience and Education Wrapper */}
+                                        <div className='grid md:grid-cols-2 gap-y-8'>
+                                            {/* Experience */}
+                                            <div className='flex flex-col gap-y-6'>
+                                            <div className='flex gap-x-4 items-center text-[22px] text-primary'>
+                                                <Briefcase />
+                                                <h4 className='capitalize font-medium'>
+                                                    {getData(qualificationData, 'experience').title}
+                                                </h4>
+                                            </div>
+                                                {/* List */}
+                                                <div className='flex flex-col gap-y-8'>
+                                                    {getData(qualificationData, 'experience').data.map((item, index) => {
+                                                        const {company, role, years} = item;
+                                                        return(
+                                                            <div className='flex gap-x-8 group' key={index}>
+                                                                <div className='h-[84px] w-[1px] bg-border relative ml-2'>
+                                                                    <div className='w-[11px] h-[11px] rounded-full bg-primary absolute -left-[5px] group-hover:translate-y-[84px] transition-all duration-500'></div>
+                                                                </div>
+                                                                <div>
+                                                                    <div className='font-semibold text-xl leading-none mb-2'>{company}</div>
+                                                                    <div className='text-lg leading-none text-muted-foreground mb-4'>{role}</div>
+                                                                    <div className='text-base font-medium'>{years}</div>
+                                                                </div>
+                                                            </div>
+                                                        )
+                                                    })}
+                                                </div>
+                                            </div>
+                                            {/* Education */} 
+                                            <div className='flex flex-col gap-y-6'>
+                                            <div className='flex gap-x-4 items-center text-[22px] text-primary'>
+                                                <GraduationCap size={28} />
+                                                <h4 className='capitalize font-medium'>
+                                                    {getData(qualificationData, 'education').title}
+                                                </h4>
+                                            </div>
+                                                {/* List */}
+                                                <div className='flex flex-col gap-y-8'>
+                                                    {getData(qualificationData, 'education').data.map((item, index) => {
+                                                        const {university, qualification, years} = item;
+                                                        return(
+                                                            <div className='flex gap-x-8 group' key={index}>
+                                                                <div className='h-[84px] w-[1px] bg-border relative ml-2'>
+                                                                    <div className='w-[11px] h-[11px] rounded-full bg-primary absolute -left-[5px] group-hover:translate-y-[84px] transition-all duration-500'></div>
+                                                                </div>
+                                                                <div>
+                                                                    <div className='font-semibold text-xl leading-none mb-2'>{university}</div>
+                                                                    <div className='text-lg leading-none text-muted-foreground mb-4'>{qualification}</div>
+                                                                    <div className='text-base font-medium'>{years}</div>
+                                                                </div>
+                                                            </div>
+                                                        )
+                                                    })}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
                             </TabsContent>
+                            
                             <TabsContent value="skills">
                                 skills Info
                             </TabsContent>
