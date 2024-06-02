@@ -86,7 +86,9 @@ module.exports = {
         about_shape_light: 'url(/about/shape-light.svg)',
         about_shape_dark: 'url(/about/shape-dark.svg)',
         dots_light: 'url(/dots-light.svg)',
-        dots_dark: 'url(/dots-dark.svg)'
+        dots_dark: 'url(/dots-dark.svg)',
+        work_project_bg_light: 'url(/work/project-bg-light.png)',
+        work_project_bg_dark: 'url(/work/project-bg-dark.png)'
       },
     },
   },
