@@ -1,5 +1,6 @@
 import React from 'react'
 import { MailIcon, HomeIcon, PhoneCall } from 'lucide-react'
+import Form from '@/components/Form'
 
 const Contact = () => {
   return (
@@ -37,9 +38,7 @@ const Contact = () => {
             <div>8967458695</div>
           </div>
         </div>
-        <form action="">
-
-          </form>
+        <Form />
       </div>
     </div>
     </section>
